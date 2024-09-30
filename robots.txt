@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://enginksz.github.io/sitemap.xml
