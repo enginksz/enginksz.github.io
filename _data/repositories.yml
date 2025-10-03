@@ -1,0 +1,10 @@
+github_users:
+  - enginksz
+
+repo_description_lines_max: 2
+
+github_repos:
+  - enginksz/LIO_SAM_Gazebo_ROS2
+  - enginksz/imitation_learning_ros
+  - enginksz/YOLOV8_ROS2
+  - enginksz/siyi_a8_mini_camera

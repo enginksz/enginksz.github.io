@@ -1,0 +1,190 @@
+{
+  "basics": {
+    "name": "Engin OKSUZ",
+    "label": "Autonomous Driving Software Engineer",
+    "image": "",
+    "email": "enginksz@hotmail.com",
+    "url": "https://www.linkedin.com/in/enginoksuzprofili/",
+    "summary": "I am work on Autonomous Systems",
+    "location": {
+      "city": "Ankara",
+      "countryCode": "Turkiye"
+    },
+    "profiles": [
+      {
+        "network": "linkedin",
+        "username": "Engin OKSUZ",
+        "url": "https://www.linkedin.com/in/enginoksuzprofili/"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Istanbul Technical University, Istanbul",
+      "location": "Istanbul, Turkiye",
+      "url": "https://www.itu.edu.tr/en/homepage",
+      "area": "Electronics Engineering",
+      "studyType": "Master of Science",
+      "startDate": "2019",
+      "endDate": "2022",
+      "score": "3.5/4",
+      "courses": [
+        "Statistical Signal Processing",
+        "Mathematics",
+        "System Theory",
+        "Low-Power Electron.Sys.Design",
+        "Active Netwok Synthesis",
+        "Probability Theory and Stochastic Processes",
+        "Digital Electronic Circuits",
+        "Object Oriented Model.&Design",
+        "Computer Vision"
+      ]
+    },
+    {
+      "institution": "Istanbul Technical University, Istanbul",
+      "location": "Istanbul, Turkiye",
+      "url": "https://www.itu.edu.tr/en/homepage",
+      "area": "Electrical and Electronics Engineering",
+      "studyType": "Bachelor's Degree",
+      "startDate": "2012",
+      "endDate": "2017",
+      "score": "3.3/4"
+    }
+  ],
+  "work": [
+    {
+      "name": "HAVELSAN - Robotics and Autonomous Systems",
+      "position": "Robotics Software Engineer",
+      "url": "https://havelsan.com/en/",
+      "startDate": "2021",
+      "endDate": "-",
+      "highlights": [
+        "Hands on experience with AD sensors (including Cameras, LIDAR, RADAR, GPS and IMU) and processing platforms",
+        "Perception Algorithms: sensor calibrations, development of algorithms for object detection, tracking, and , localization using LIDAR and camera data, drivable road segmentation, and classification.",
+        "Path Planning Algorithms: search-based planning algorithms (A*, D* Lite) and local_planner algorithms.",
+        "Developed and applied sensor fusion algorithms integrating data from LiDAR and cameras.",
+        "Design of autonomous vehicle software on the ROS1-2 platform and execution of simulation-based tests.",
+        "Distribution of autonomous vehicle software tailored to NVIDIA hardware (AGX, NX, etc.).",
+        "UAV Localization in GNSS-Denied Environments assisted by DL features extracted from satellite imagery.",
+        "Object Detection from UAV camera feed and localization of detected objects.",
+        "Algorithm development for data collection from UAV cameras using MAVROS and MAVSDK libraries."
+      ]
+    },
+    {
+      "name": "Turkish Technlogy Team",
+      "position": "TEKNOFEST Competitions Coordinator",
+      "url": "https://www.teknofest.org/en/",
+      "startDate": "2019",
+      "endDate": "2021",
+      "highlights": [
+        "I worked as a competition coordinator in technology competitions held in 35 different fields.",
+        "Training programs and content creation.",
+        "Organized question and answer meetings.",
+        "I managed website content and social media contents."
+      ]
+    },
+    {
+      "name": "HARGEM",
+      "position": "Researcher / Student",
+      "startDate": "2014",
+      "endDate": "2016",
+      "highlights": [
+        "New generation high-speed wireless communication systems research and development studies.",
+        "Methods of Automatically Determining the Modulation Type of Communication Signals."
+      ]
+    },
+    {
+      "name": "Gate Elektronik",
+      "position": "Electronics Engineer (Intern)",
+      "startDate": "2015",
+      "endDate": "2015",
+      "highlights": [
+        "Designed electronic circuits with necessary component selections",
+        "Tested developed cards through prepared software.",
+        "Implemented and trained computer vision models for object detection and image classification using TensorFlow and MobileSSD",
+        "Developed computer vision algorithms to detect and track objects of interest in video streams using OpenCV"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Second-Ranked Degree",
+      "date": "2017",
+      "awarder": "Bachelor's Degree in Electrical and Electronics Engineering (Full Scholarship)"
+    },
+    {
+      "title": "High Honor Certificate",
+      "date": "2015",
+      "awarder": "Bachelor's Degree in Electrical and Electronics Engineering (Full Scholarship)"
+    },
+    {
+      "title": "Honor Certificate",
+      "date": "2014",
+      "awarder": "Bachelor's Degree in Electrical and Electronics Engineering (Full Scholarship)"
+    },
+    {
+      "title": "TÜBİTAK 2209/A - Research Projects Support Program",
+      "date": "2015",
+      "awarder": "Bachelor's Degree in Electrical and Electronics Engineering (Full Scholarship)"
+    }
+  ],
+  "publications": [
+    {
+      "name": "A Comparative Performance Analysis of FFT Based and DWT Based Systems for OFDM Systems",
+      "publisher": "2016 24th Signal Processing and Communication Application Conference (SIU)",
+      "releaseDate": "23 June 2016",
+      "url": "https://ieeexplore.ieee.org/document/7495949"
+    },
+    {
+      "name": "An Investigation Effects over Jammer Signal Excision of Different Spreading Sequences Employed in Spread Spectrum Communication",
+      "publisher": "Journal for New Generation Sciences, ",
+      "releaseDate": "2016",
+      "url": "https://www.researchgate.net/profile/Engin-Oksuz-2"
+    },
+    {
+      "name": "A frequency domain channel equalizer for discrete Wavelet Transform based OFDM systems",
+      "publisher": "Journal for New Generation Sciences, ",
+      "releaseDate": "2016",
+      "url": "https://www.researchgate.net/profile/Engin-Oksuz-2"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Skills:",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Python",
+        "C++",
+        "PyTorch",
+        "OpenCV",
+        "NumPy",
+        "Docker,",
+        "ROS,ROS2",
+        "GitHub",
+        "Computer Vision",
+        "Simulation,",
+        "Machine Learning"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Turkish",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "Hobies",
+      "icon": "fa-solid fa-tag",
+      "keywords": ["Drawing", "Football ", "Robotics ", "Traveling ", "Space"]
+    }
+  ]
+}
