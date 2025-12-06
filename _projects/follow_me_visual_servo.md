@@ -28,66 +28,11 @@ This hybrid approach leverages the strengths of both deep learning (robust detec
 
 The system operates in a closed-loop control fashion:
 
-```mermaid
-flowchart TB
-    subgraph INPUT["📷 Input"]
-        CAM[Camera Frame]
-    end
-    
-    subgraph DETECTION["🎯 YOLOv11 Detection"]
-        YOLO[YOLOv11 Model]
-        BBOX[Bounding Box]
-        CONF[Confidence Score]
-        YOLO --> BBOX
-        YOLO --> CONF
-    end
-    
-    subgraph SEGMENTATION["🎨 SAM2 Segmentation"]
-        SAM[SAM2 Model]
-        MASK[Segmentation Mask]
-        SAM --> MASK
-    end
-    
-    subgraph FEATURES["📊 Feature Extraction"]
-        CENT[Centroid u_c, v_c]
-        AREA[Area Ratio a]
-        FEAT[Feature Vector s]
-        CENT --> FEAT
-        AREA --> FEAT
-    end
-    
-    subgraph CONTROL["🤖 Visual Servo Control"]
-        ERR[Error Calculation<br/>e = s - s*]
-        JAC[Image Jacobian L_s]
-        VEL[Velocity Command<br/>v = -λ L_s⁺ e]
-        ERR --> VEL
-        JAC --> VEL
-    end
-    
-    subgraph OUTPUT["⚙️ Robot Motion"]
-        LIN[Linear Velocity v_x]
-        ANG[Angular Velocity ω_z]
-        MOT[Motor Commands]
-        LIN --> MOT
-        ANG --> MOT
-    end
-    
-    CAM --> YOLO
-    BBOX --> SAM
-    MASK --> CENT
-    MASK --> AREA
-    FEAT --> ERR
-    VEL --> LIN
-    VEL --> ANG
-    MOT -.->|Feedback Loop| CAM
-    
-    style INPUT fill:#1a1a2e,stroke:#16213e,color:#fff
-    style DETECTION fill:#0f3460,stroke:#16213e,color:#fff
-    style SEGMENTATION fill:#533483,stroke:#16213e,color:#fff
-    style FEATURES fill:#e94560,stroke:#16213e,color:#fff
-    style CONTROL fill:#0f3460,stroke:#16213e,color:#fff
-    style OUTPUT fill:#1a1a2e,stroke:#16213e,color:#fff
-```
+<div class="row justify-content-sm-center">
+    <div class="col-sm-12 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/follow_me_architecture.png" title="Follow-Me System Architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ### Pipeline Stages
 
