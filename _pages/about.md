@@ -30,12 +30,6 @@ I also work on **Toyota Corolla Autonomous Vehicle** projects, focusing on multi
 
 Additionally, I develop **UAV systems** for GNSS-denied navigation using deep learning-based localization algorithms that extract features from satellite imagery, achieving robust positioning in challenging environments.
 
-## Education
-
-I hold a **Master of Science in Electronics Engineering** from **Istanbul Technical University** (2019-2022), where my thesis focused on "Embedded AI Based Image Matching Method and Application in UAV," combining SuperPoint and SuperGlue techniques for feature matching between UAV images and satellite maps.
-
-I completed my **Bachelor's Degree in Electrical and Electronics Engineering** at **Nuh Naci Yazgan University** (2012-2017) with **second-ranked honors** (GPA: 3.24/4.00). During my undergraduate studies, I presented four articles at EEB 2016 and IEEE SIU-2016 symposiums. My thesis was titled "The Robot Can Follow the Smell," and I was awarded High Honor Certificates (x2) and Honor Certificates (x2).
-
 ## Technical Skills
 
 **Programming**: C++, Python, Bash  

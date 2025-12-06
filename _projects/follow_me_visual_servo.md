@@ -30,7 +30,7 @@ The system operates in a closed-loop control fashion:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/follow_me_architecture.png" title="Follow-Me System Architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/project_sam2.png" title="Follow-Me System Architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
