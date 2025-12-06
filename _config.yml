@@ -8,7 +8,7 @@ middle_name:
 last_name: Oksuz
 email: enginksz@hotmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A software engineer
+  Robotics Software Engineer specializing in autonomous systems, perception, and computer vision. Experienced in sensor fusion, SLAM, path planning, and deep learning for UGV/UAV applications.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.

@@ -2,96 +2,176 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Engin Oksuz
+    - name: Location
+      value: Cankaya, Ankara, Turkey
+    - name: Email
+      value: enginksz@hotmail.com
+    - name: Phone
+      value: +90 552 384 0717
     - name: Languages
-      value: English, German
+      value: Turkish (Native), English (Professional)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master of Science in Electronics Engineering
+      institution: Istanbul Technical University, Istanbul, Turkey
+      year: 2019 - 2022
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Thesis: Embedded AI Based Image Matching Method and Application in UAV
+        - Focus: Signal processing, probability theory, deep learning
+        - Developed image matching methods using SuperPoint and SuperGlue techniques
+    - title: Bachelor's Degree in Electrical and Electronics Engineering
+      institution: Nuh Naci Yazgan University, Kayseri, Turkey
+      year: 2012 - 2017
       description:
-        - Description 1.
-        - Description 2.
+        - Degree: Second Ranked Degree (GPA: 3.24/4.00)
+        - Honors: High Honor Certificate (x2), Honor Certificate (x2)
+        - Thesis: The Robot Can Follow The Smell
+        - Project: TÜBİTAK 2209/A - Research Project Support Program
+        - Presented 4 articles at EEB 2016 and IEEE SIU-2016 symposiums
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Robotics Software Engineer
+      institution: HAVELSAN - Robotics and Autonomous Systems, Ankara, Turkey
+      year: Apr 2021 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - title: UGV BARKAN (Unmanned Ground Vehicle) Development
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+            - title: Perception & Computer Vision
+              contents:
+                - Architected PyTorch segmentation system with SuperGradients, CLAHE preprocessing and morphological operations
+                - Designed LiDAR-camera fusion with OpenCV stereo vision and PCL point cloud processing
+                - Implemented DINOv2 transformers and Meta SAM for feature extraction and zero-shot segmentation
+                - Deployed RF-DETR models with ONNX Runtime GPU optimization achieving high-FPS detection
+            - title: Sensor Fusion & Localization
+              contents:
+                - Led real-time SLAM implementation for UGV with FAST-LIO and IMU-LiDAR fusion
+                - Architected fusion systems for Livox LiDAR, cameras, and IMU with advanced preprocessing
+                - Designed 3D pipelines using PCL and Open3D for voxel filtering and outlier removal
+            - title: Navigation & Path Planning
+              contents:
+                - Implemented costmap algorithms for autonomous navigation with real-time obstacle avoidance
+                - Developed systems integrating LiDAR-camera fusion with YOLOv11 for obstacle detection and dynamic replanning
+            - title: System Architecture & Monitoring
+              contents:
+                - Architected real-time CPU monitoring with C++ implementation
+                - Designed comprehensive health monitoring for sensors and ROS nodes
+            - title: Hardware Optimization
+              contents:
+                - Optimized software for NVIDIA AGX/NX platforms with production-grade performance tuning
+                - Optimized performance for Neousys Nuvo platforms using Python/C++ with production-grade tuning
+                - Architected CUDA execution providers for ONNX models
+                - Designed autonomous vehicle software with extensive simulation testing using ROS/ROS2 architecture
+        - title: Toyota Corolla Autonomous Vehicle
+          contents:
+            - title: Sensor Integration & Data Processing
+              contents:
+                - Architected sensor fusion systems processing Lucid Cameras, Velodyne LIDARs, SmartMicro RADARs and Applanix/SBG INS data in Python/C++
+                - Implemented preprocessing algorithms and fusion techniques for enhanced reliability in autonomous navigation
+            - title: Path Planning
+              contents:
+                - Led adaptation of Autoware path planning algorithms, implementing search-based and global planners, local planners in C++ for real-time motion planning
+        - title: UAV (Unmanned Aerial Vehicle) Systems
+          contents:
+            - title: GNSS-Denied Navigation & Localization
+              contents:
+                - Architected and implemented localization algorithms using deep learning features extracted from satellite imagery with Python, achieving robust positioning in challenging environments
+                - Developed integration of position estimation data with INS for enhanced autopilot feedback and navigation accuracy
+            - title: Computer Vision & Object Detection
+              contents:
+                - Designed and implemented Python-based algorithms for detecting and localizing objects from UAV camera feeds with high accuracy
+                - Developed detection pipelines integrating camera data with positioning for precise object localization
+            - title: Data Collection & Automation
+              contents:
+                - Architected data collection processes using MAVROS and MAVSDK libraries for efficient mission execution
+                - Implemented robust systems for seamless data acquisition during autonomous flights
+            - title: Indoor Positioning & Testing
+              contents:
+                - Conducted comprehensive geometric flight tests with Loco Positioning System and Lighthouse indoor positioning systems using Crazyflie drone platform
+                - Performed extensive testing and validation of positioning algorithms in controlled indoor environments
+    - title: Coordinator
+      institution: TEKNOFEST Competitions, Istanbul, Turkey
+      year: Jan 2019 - Apr 2021
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Worked as competition coordinator in technology competitions held in 35 different fields
+        - Managed training programs and content creation
+        - Organized question and answer meetings
+        - Managed website content and social media contents
+    - title: Researcher Student
+      institution: HARGEM, Kayseri, Turkey
+      year: Apr 2014 - Apr 2016
       description:
+        - Research and development studies on new generation high speed wireless communication systems
+        - Methods of automatically determining modulation types of communication signals
+        - Worked with DSP and FPGAs
+    - title: Electronics Engineer (Intern)
+      institution: Gate Elektronik, Ankara, Turkey
+      year: Jun 2015 - Aug 2015
+      description:
+        - Designed electronic circuits with necessary component selections
+        - Tested developed cards through prepared software
+        - Implemented and trained computer vision models for object detection and image classification using TensorFlow
+        - Developed computer vision algorithms to detect and track objects of interest in video streams using OpenCV
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Programming & Scripting
+      items:
+        - C++, Python, Bash
+    - title: Tools and Platforms
+      items:
+        - Docker, ROS1/ROS2, ONNX Runtime, TensorRT, NVIDIA Jetson, Ubuntu Linux
+    - title: Frameworks and Libraries
+      items:
+        - PyTorch, OpenCV, PCL, Open3D, SuperGradients, DINOv2, SAM, RF-DETR, YOLO, Autoware.AI/Universe, MAVROS
+    - title: Specialized Areas
+      items:
+        - Semantic Segmentation, Object Detection, Sensor Fusion, SLAM, Collision Avoidance, Terrain Analysis
+    - title: Sensor Technologies
+      items:
+        - LiDAR (Velodyne, Robosense), Cameras (Lucid, ZEDs), IMU/GPS (Applanix, SBG), RADAR (SmartMicro)
+    - title: Version Control & Project Management
+      items:
+        - Git, GitHub, GitLab, Bitbucket, Jira, Confluence
 
-- title: Open Source Projects
+- title: Courses & Certifications
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Introduction to Self-Driving Cars
+      institution: Udacity
+      year: Completed
+    - title: Robotics Software Engineer
+      institution: Udacity
+      year: Completed
+    - title: Introduction to Computer Vision
+      institution: Udacity
+      year: Completed
+    - title: C++ Programming Language Course
+      institution: Necati ERGİN
+      year: Completed
+    - title: Advanced Python Programming
+      institution: Udemy
+      year: Completed
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2012-2017
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - High Honor Certificate (x2) - Nuh Naci Yazgan University
+        - Honor Certificate (x2) - Nuh Naci Yazgan University
+        - Second Ranked Degree (GPA: 3.24/4.00)
+        - TÜBİTAK 2209/A - Research Project Support Program
+    - year: 2016
       items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+        - Presented 4 articles at EEB 2016 and IEEE SIU-2016 symposiums
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Drawing, Football, Robotics, Traveling
