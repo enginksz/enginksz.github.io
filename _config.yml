@@ -121,7 +121,25 @@ contact_note: >
 
 # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
 # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-google_analytics: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+# 
+# ADIM ADIM TALİMATLAR:
+# 1. https://analytics.google.com/ adresine gidin
+# 2. Google hesabınızla giriş yapın
+# 3. "Admin" (Yönetim) butonuna tıklayın
+# 4. "Create Property" (Özellik Oluştur) seçeneğini seçin
+# 5. Özellik adını girin (örn: "enginksz.github.io")
+# 6. Zaman dilimi ve para birimini seçin
+# 7. "Show advanced options" (Gelişmiş seçenekleri göster) tıklayın
+# 8. "Create a Universal Analytics property" seçeneğini AÇIK bırakın (isteğe bağlı)
+# 9. "Next" (İleri) butonuna tıklayın
+# 10. İşletme bilgilerini doldurun ve "Create" (Oluştur) tıklayın
+# 11. "Data Streams" (Veri Akışları) bölümüne gidin
+# 12. "Add stream" > "Web" seçin
+# 13. Web sitesi URL'nizi girin: https://enginksz.github.io
+# 14. Stream adını girin ve "Create stream" tıklayın
+# 15. "Measurement ID" değerini kopyalayın (G-XXXXXXXXXX formatında)
+# 16. Aşağıdaki satıra bu ID'yi yapıştırın:
+google_analytics: G-E7M9K4CV0K # Google Analytics Measurement ID
 cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
 
@@ -425,7 +443,7 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: false # enables google analytics
+enable_google_analytics: true # enables google analytics - Google Analytics Measurement ID'nizi yukarıdaki google_analytics alanına eklemeyi unutmayın!
 enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_google_verification: false # enables google site verification
