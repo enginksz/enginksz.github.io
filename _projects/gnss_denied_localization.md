@@ -2,7 +2,7 @@
 layout: page
 title: GNSS-Denied Visual Localization for UAVs using Satellite Imagery
 description: Deep learning-based visual localization system for autonomous UAV navigation in GPS-denied environments
-img: assets/img/projects/navwogps/header.jpg
+img: assets/img/projects/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
 importance: 1
 category: work
 giscus_comments: true
@@ -244,7 +244,7 @@ Potential improvements and extensions:
 
 *High-level system architecture showing the five main modules and data flow between components.*
 
-### Estimation of UAV Position in NED frame 
+### Estimation of UAV Position in NED frame
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
