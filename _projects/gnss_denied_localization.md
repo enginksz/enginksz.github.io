@@ -2,7 +2,7 @@
 layout: page
 title: GNSS-Denied Visual Localization for UAVs using Satellite Imagery
 description: Deep learning-based visual localization system for autonomous UAV navigation in GPS-denied environments
-img: assets/img/projects/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
+img: assets/img/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
 importance: 1
 category: work
 giscus_comments: true
@@ -218,7 +218,7 @@ Potential improvements and extensions:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/navwogps/Screenshot from 2024-10-10 17-34-40.png" title="Feature Matching Results" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/navwogps/Screenshot from 2024-10-10 17-34-40.png" title="Feature Matching Results" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -228,27 +228,17 @@ Potential improvements and extensions:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/navwogps/Screenshot from 2024-10-10 17-45-19.png" title="Position Estimation Accuracy" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/navwogps/Screenshot from 2024-10-10 17-45-19.png" title="Position Estimation Accuracy" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
 *Comparison of estimated trajectory (blue) with ground truth GPS trajectory (red) during a test flight. Mean position error: 4.8 meters.*
 
-### System Architecture Overview
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/navwogps/system_overview.png" title="System Architecture Overview" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
-*High-level system architecture showing the five main modules and data flow between components.*
-
 ### Estimation of UAV Position in NED frame
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/navwogps/09_ekim_figure_1.png" title="Real-Time Visualization" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/navwogps/09_ekim_figure_1.png" title="Real-Time Visualization" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
