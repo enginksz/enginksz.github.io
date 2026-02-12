@@ -60,7 +60,7 @@ The following images show the Crazyflie 2.1 platform setup used in this project:
     </div>
 </div>
 
-*Left: Crazyflie 2.1 nano quadcopter with expansion decks. Right: Lighthouse Positioning Deck installed on the Crazyflie for high-precision indoor positioning.*
+*Crazyflie 2.1 nano quadcopter with expansion decks and Lighthouse Positioning Deck installed for high-precision indoor positioning.*
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -71,7 +71,7 @@ The following images show the Crazyflie 2.1 platform setup used in this project:
     </div>
 </div>
 
-*Left: Flight test setup with Lighthouse base stations visible in the background. Right: Crazyflie executing autonomous flight maneuvers with precise trajectory following.*
+*Flight test environment with Lighthouse base stations and Crazyflie executing autonomous flight maneuvers with precise trajectory following.*
 
 ## Project Objectives
 
@@ -634,7 +634,7 @@ The following images capture various aspects of the flight tests and system setu
     </div>
 </div>
 
-*Left: Crazyflie 2.1 executing autonomous flight maneuvers. The compact design and modular expansion decks are visible. Right: Lighthouse Positioning Deck installed on the Crazyflie, enabling high-precision indoor positioning with decimeter-level accuracy.*
+*Crazyflie 2.1 executing autonomous flight maneuvers with Lighthouse Positioning Deck installed, enabling high-precision indoor positioning with decimeter-level accuracy.*
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -645,7 +645,7 @@ The following images capture various aspects of the flight tests and system setu
     </div>
 </div>
 
-*Left: Flight test environment with Lighthouse base stations positioned for optimal coverage. The system geometry is calibrated to provide accurate positioning throughout the tracking volume. Right: Crazyflie executing the complex rotating star pattern maneuver, demonstrating precise trajectory following and control system coordination.*
+*Flight test environment with Lighthouse base stations and Crazyflie executing the complex rotating star pattern maneuver, demonstrating precise trajectory following and control system coordination.*
 
 ## Key Learnings
 
