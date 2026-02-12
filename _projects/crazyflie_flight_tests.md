@@ -220,82 +220,144 @@ $$z_{filtered}(t) = \beta z_{baro}(t) + (1-\beta) z_{filtered}(t-1)$$
 
 where $\beta$ is the barometer filter coefficient.
 
-### Visual Localization with LightGlue
+### Lighthouse Positioning System
 
-For advanced positioning capabilities, the project integrated **LightGlue**, a state-of-the-art deep learning-based feature matching system for visual localization. LightGlue enables precise position estimation by matching visual features between camera images and reference maps.
+For high-precision indoor positioning, the project utilized the **Lighthouse Positioning System**, an optically-based positioning system that provides decimeter-level accuracy and millimeter-level precision. The system uses SteamVR Base Stations as optical beacons, allowing the Crazyflie to calculate its position onboard without requiring external motion capture infrastructure.
 
-#### LightGlue Architecture
+#### System Architecture
 
-LightGlue is a graph neural network-based feature matcher that provides robust correspondence between image features. The system architecture consists of:
+The Lighthouse Positioning System consists of:
 
-1. **Feature Extraction**: Deep learning models (SuperPoint, ALIKED, DISK) extract keypoints and descriptors
-2. **Graph Construction**: Features are represented as nodes in a graph
-3. **Attention-Based Matching**: Graph neural networks establish correspondences
-4. **Confidence Scoring**: Each match is assigned a confidence score
-5. **Outlier Rejection**: Geometric verification filters incorrect matches
+1. **Base Stations**: SteamVR Base Stations (V1 or V2) that emit rotating laser sweeps
+2. **Lighthouse Positioning Deck**: Onboard deck with photodiodes that receive laser signals
+3. **Onboard Processing**: Position and orientation calculation performed directly on the Crazyflie
+4. **System Geometry**: Calibrated base station positions and orientations in the tracking space
+
+#### Operating Principle
+
+The system operates using optical triangulation:
+
+1. **Laser Sweep**: Base stations emit rotating laser beams that sweep across the room
+2. **Photodiode Detection**: Multiple photodiodes on the Lighthouse deck detect the laser sweeps
+3. **Angle Measurement**: The system measures the angle between each base station and each photodiode
+4. **Triangulation**: Using multiple photodiodes and base stations, position and orientation are calculated
 
 #### Mathematical Foundation
 
-LightGlue uses attention mechanisms to establish feature correspondences. Given two sets of features $\mathbf{F}_A$ and $\mathbf{F}_B$ from images $A$ and $B$:
+**Angle Measurement**:
 
-**Self-Attention**:
-$$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}$$
+For each base station $i$ and photodiode $j$, the system measures the angle $\theta_{ij}$:
 
-where $\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$ are query, key, and value matrices derived from feature descriptors.
+$$\theta_{ij} = \arctan\left(\frac{y_{ij}}{x_{ij}}\right)$$
 
-**Cross-Attention**:
-The cross-attention mechanism establishes correspondences between features from different images:
+where $(x_{ij}, y_{ij})$ are the relative coordinates of photodiode $j$ with respect to base station $i$.
 
-$$\mathbf{M}_{ij} = \text{softmax}\left(\frac{\mathbf{f}_i^A \cdot \mathbf{f}_j^B}{\sqrt{d}}\right)$$
+**Position Estimation**:
 
-where $\mathbf{f}_i^A$ and $\mathbf{f}_j^B$ are feature descriptors, and $\mathbf{M}_{ij}$ represents the matching confidence.
+Given angles from multiple base stations and photodiodes, the position $\mathbf{p} = [x, y, z]^T$ is estimated by solving:
 
-**Bidirectional Matching**:
-LightGlue performs bidirectional matching to ensure consistency:
+$$\min_{\mathbf{p}, \mathbf{R}} \sum_{i,j} \|\theta_{ij}^{measured} - \theta_{ij}^{calculated}(\mathbf{p}, \mathbf{R})\|^2$$
 
-$$m_{ij} = \arg\max_k \mathbf{M}_{ik} \quad \text{and} \quad m_{ji} = \arg\max_k \mathbf{M}_{kj}$$
+where $\mathbf{R}$ is the rotation matrix representing the Crazyflie's orientation.
 
-A match is accepted only if $m_{ij} = j$ and $m_{ji} = i$ (mutual nearest neighbors).
+**Triangulation with Multiple Base Stations**:
 
-#### Position Estimation from Matches
+With $N$ base stations and $M$ photodiodes, the system solves an overdetermined system:
 
-Given matched feature correspondences, the position is estimated using:
+$$\begin{bmatrix}
+\mathbf{A}_1 \\
+\mathbf{A}_2 \\
+\vdots \\
+\mathbf{A}_N
+\end{bmatrix} \mathbf{p} = \begin{bmatrix}
+\mathbf{b}_1 \\
+\mathbf{b}_2 \\
+\vdots \\
+\mathbf{b}_N
+\end{bmatrix}$$
 
-1. **Homography Estimation**: Compute homography matrix $\mathbf{H}$ using RANSAC:
+where each $\mathbf{A}_i$ contains the geometric constraints from base station $i$, and $\mathbf{b}_i$ contains the measured angles.
 
-$$\mathbf{H} = \arg\min_{\mathbf{H}} \sum_i \rho(\|\mathbf{x}_i' - \mathbf{H}\mathbf{x}_i\|^2)$$
+**Least Squares Solution**:
 
-where $\mathbf{x}_i$ and $\mathbf{x}_i'$ are matched feature points, and $\rho$ is a robust loss function.
+The position is estimated using weighted least squares:
 
-2. **Perspective-n-Point (PnP)**: Solve for camera pose using matched 3D-2D correspondences:
+$$\mathbf{p} = (\mathbf{A}^T \mathbf{W} \mathbf{A})^{-1} \mathbf{A}^T \mathbf{W} \mathbf{b}$$
 
-$$\min_{\mathbf{R}, \mathbf{t}} \sum_i \|\mathbf{x}_i - \pi(\mathbf{R}\mathbf{X}_i + \mathbf{t})\|^2$$
+where $\mathbf{W}$ is a weight matrix accounting for measurement uncertainties.
 
-where $\mathbf{R}$ and $\mathbf{t}$ are rotation and translation, $\mathbf{X}_i$ are 3D points, and $\pi$ is the projection function.
+#### Lighthouse V1 vs V2
 
-3. **Bundle Adjustment**: Refine position estimate by minimizing reprojection error:
+The system supports both generations of base stations:
 
-$$E = \sum_{i,j} \|\mathbf{x}_{ij} - \pi(\mathbf{R}_j\mathbf{X}_i + \mathbf{t}_j)\|^2$$
+| Characteristics | Lighthouse V1 | Lighthouse V2 |
+|----------------|---------------|---------------|
+| **Rotating Drums** | 2 drums | 1 drum with 2 slanted planes |
+| **Range** | ~6m (environment dependent) | 6m (by design) |
+| **Update Rate** | 30Hz (with 2 base stations) | ~50Hz (independent of base station count) |
+| **Max Base Stations** | 1-2 | 1-4 (up to 16 in hardware) |
+| **Horizontal FOV** | 120° | 150° |
+| **Vertical FOV** | 120° | 110° |
 
-#### LightGlue Performance Characteristics
+#### System Geometry Calibration
 
-- **Matching Speed**: 10-30ms per image pair on embedded hardware (NVIDIA Jetson)
-- **Accuracy**: >95% matching precision on challenging image pairs
-- **Robustness**: Handles illumination changes, viewpoint variations, and partial occlusions
-- **Scalability**: Supports up to 2048 keypoints per image
-- **Real-Time Capability**: Optimized for real-time operation at 10-30 Hz
+The system requires calibration of base station positions and orientations:
+
+**Geometry Definition**:
+
+Each base station $i$ has:
+- Position: $\mathbf{p}_{bs,i} = [x_i, y_i, z_i]^T$
+- Orientation: Rotation matrix $\mathbf{R}_{bs,i}$
+
+**Calibration Process**:
+
+1. **Automatic Calibration**: Crazyflie client automatically determines geometry by flying in the space
+2. **Manual Calibration**: Geometry can be manually configured if base station positions are known
+3. **Geometry Storage**: Calibrated geometry is stored onboard the Crazyflie
+
+**Coordinate Transformation**:
+
+Position in base station frame is transformed to global frame:
+
+$$\mathbf{p}_{global} = \mathbf{R}_{bs,i}^T (\mathbf{p}_{local} - \mathbf{p}_{bs,i})$$
+
+#### Performance Characteristics
+
+**Accuracy and Precision**:
+- **Absolute Accuracy**: Better than 10cm (decimeter-level)
+- **Relative Precision**: Better than 1mm (millimeter-level)
+- **Return-to-Pad Precision**: Millimeter-level precision for returning to takeoff position
+
+**System Limitations**:
+- **Line of Sight**: Requires direct optical line of sight to at least one base station
+- **Range**: Effective range up to 6 meters
+- **Height Constraint**: Optimal performance up to ~50cm below base station height
+- **Indoor Only**: System is designed for indoor use only
+- **Sunlight Sensitivity**: Performance can be affected by direct sunlight (infrared interference)
+
+**Update Rate**:
+- **V1**: 30Hz with 2 base stations
+- **V2**: ~50Hz, independent of number of base stations
 
 #### Integration with Crazyflie
 
-The LightGlue system was integrated with Crazyflie for visual localization:
+The Lighthouse Positioning System was integrated with Crazyflie for precise trajectory following:
 
-1. **Onboard Camera**: Downward-facing camera captures ground images
-2. **Feature Extraction**: Real-time keypoint detection and description
-3. **Map Matching**: Match features against pre-loaded reference maps
-4. **Position Update**: Fuse visual position estimates with IMU/barometer data
-5. **Control Integration**: Use position estimates for precise trajectory following
+1. **Hardware Setup**: Lighthouse Positioning Deck installed on Crazyflie 2.1
+2. **Base Station Installation**: Two or more SteamVR Base Stations mounted in the tracking space
+3. **Geometry Calibration**: System geometry automatically calibrated by Crazyflie client
+4. **Onboard Position**: Position and orientation calculated onboard at 30-50Hz
+5. **Control Integration**: High-frequency position updates used for precise trajectory following
 
-This integration enables the Crazyflie to maintain accurate position estimates even in GPS-denied environments, significantly improving the accuracy of complex maneuvers like the star pattern trajectory.
+**Control Loop Integration**:
+
+The Lighthouse position updates are integrated into the control loop:
+
+$$\mathbf{p}_{fused}(t) = \alpha \mathbf{p}_{lighthouse}(t) + (1-\alpha) \mathbf{p}_{predicted}(t)$$
+
+where $\alpha$ is the fusion coefficient, and $\mathbf{p}_{predicted}$ is the position predicted from IMU integration.
+
+This integration enables the Crazyflie to maintain accurate position estimates for complex maneuvers like the star pattern trajectory, with the high update rate (30-50Hz) providing smooth and responsive control.
 
 ### Coordinate Transformations
 
@@ -377,7 +439,8 @@ The maneuver successfully demonstrates the robustness of the control system and 
 **Solution**: 
 - Implemented complementary filter for attitude estimation
 - Used barometer for altitude correction
-- Integrated external positioning system (motion capture) for ground truth
+- Integrated Lighthouse Positioning System for high-precision position updates
+- Fused Lighthouse position with IMU-based dead reckoning for robust state estimation
 
 ### Challenge 2: Control System Tuning
 
@@ -437,43 +500,88 @@ The Crazyflie platform is suitable for:
 - **Swarm Robotics**: Multi-robot coordination and formation flying
 - **Sensor Development**: Testing new sensor technologies in flight
 
-## LightGlue Visual Localization System
+## Lighthouse Positioning System Details
 
-### Feature Matching Visualization
+### System Setup and Calibration
 
-The following visualization demonstrates LightGlue's feature matching capabilities used for visual localization:
+The Lighthouse Positioning System requires careful setup and calibration for optimal performance:
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/navwogps/Screenshot from 2024-10-10 17-34-40.png" title="LightGlue Feature Matching" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+**Base Station Configuration**:
+- **Mounting Height**: Base stations should be mounted 2-3 meters above the tracking area
+- **Angular Coverage**: Positioned to maximize coverage of the tracking volume
+- **Line of Sight**: Ensure clear line of sight from base stations to the tracking area
+- **Synchronization**: Base stations must be properly synchronized (V1 requires sync cable, V2 uses wireless sync)
 
-*LightGlue feature matching results showing correspondences between camera image and reference map. Green lines indicate matched features with high confidence scores. The bidirectional matching ensures robust correspondences even under challenging conditions.*
+**Geometry Calibration Process**:
 
-### Position Estimation Accuracy
+The system geometry is calibrated using an iterative process:
 
-The following visualization shows the position estimation accuracy achieved using LightGlue-based visual localization:
+1. **Initial Guess**: Base station positions are estimated or manually entered
+2. **Measurement Collection**: Crazyflie flies in the space, collecting angle measurements
+3. **Optimization**: System solves for optimal base station positions and orientations:
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/navwogps/Screenshot from 2024-10-10 17-45-19.png" title="LightGlue Position Estimation" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+$$\min_{\mathbf{p}_{bs}, \mathbf{R}_{bs}} \sum_{k} \|\boldsymbol{\theta}_{measured,k} - \boldsymbol{\theta}_{calculated,k}(\mathbf{p}_{bs}, \mathbf{R}_{bs}, \mathbf{p}_k, \mathbf{R}_k)\|^2$$
 
-*Comparison of estimated trajectory (blue) with ground truth GPS trajectory (red) during a test flight. The LightGlue-based visual localization system achieves mean position error of 4.8 meters, comparable to consumer-grade GPS.*
+where $k$ indexes over all measurement samples, and $\mathbf{p}_k, \mathbf{R}_k$ are the Crazyflie's position and orientation at sample $k$.
 
-### Real-Time Localization Visualization
+### Position Update Rate and Latency
 
-The following figure demonstrates real-time position estimation using LightGlue:
+**Update Frequency**:
+- **Lighthouse V1**: 30Hz update rate with 2 base stations
+- **Lighthouse V2**: ~50Hz update rate, independent of base station count
+- **Onboard Processing**: Position calculation performed onboard with minimal latency (<1ms)
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/navwogps/09_ekim_figure_1.png" title="Real-Time LightGlue Localization" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+**Control Loop Integration**:
 
-*Real-time visualization showing UAV position on reference map with matched features and confidence indicators. The LightGlue system provides robust position estimates for precise trajectory following.*
+The high update rate enables tight control loops:
+
+$$f_{control} = \min(f_{lighthouse}, f_{control\_max})$$
+
+where $f_{control\_max}$ is typically 100Hz for position control and 250Hz for attitude control.
+
+### Accuracy Analysis
+
+**Measurement Uncertainty**:
+
+The angle measurement uncertainty propagates to position uncertainty:
+
+$$\sigma_p = \frac{\sigma_\theta \cdot d}{\sin(\theta)}$$
+
+where:
+- $\sigma_p$ is position uncertainty
+- $\sigma_\theta$ is angle measurement uncertainty (~0.1°)
+- $d$ is distance to base station
+- $\theta$ is the angle between base station and photodiode
+
+**Multi-Base Station Fusion**:
+
+With $N$ base stations, the position uncertainty is reduced:
+
+$$\sigma_{p,fused} = \frac{\sigma_p}{\sqrt{N}}$$
+
+This explains why systems with more base stations achieve better accuracy.
+
+### Integration with Control System
+
+The Lighthouse position is integrated into the cascaded control architecture:
+
+**Position Control Loop**:
+- **Input**: Lighthouse position $\mathbf{p}_{lighthouse}(t)$ at 30-50Hz
+- **Reference**: Desired trajectory position $\mathbf{p}_{desired}(t)$
+- **Output**: Velocity command $\mathbf{v}_{cmd}(t)$
+
+**Sensor Fusion**:
+
+When Lighthouse position is available, it is fused with IMU-based dead reckoning:
+
+$$\mathbf{p}_{fused}(t) = \begin{cases}
+\mathbf{p}_{lighthouse}(t) & \text{if } \|\mathbf{p}_{lighthouse} - \mathbf{p}_{imu}\| < \tau \\
+\alpha \mathbf{p}_{lighthouse}(t) + (1-\alpha) \mathbf{p}_{imu}(t) & \text{otherwise}
+\end{cases}$$
+
+where $\tau$ is a threshold for outlier rejection, and $\alpha$ is the fusion weight.
+
+This integration enables the precise trajectory following demonstrated in the star pattern maneuver, with the high update rate and low latency of the Lighthouse system providing the necessary precision for complex autonomous flight.
 
 ## Flight Test Video
 
@@ -497,9 +605,9 @@ This project provided valuable insights into:
 4. **Control Theory**: Practical application of PID control, cascaded control loops, and feedforward control
 5. **Trajectory Planning**: Generating complex trajectories (star patterns) with rotation and real-time execution
 6. **Coordinate Transformations**: Managing multiple coordinate frames (body, inertial, NED) for accurate control
-7. **Visual Localization**: Deep learning-based feature matching using LightGlue for precise position estimation
-8. **Graph Neural Networks**: Understanding attention mechanisms and graph-based feature matching
-9. **System Integration**: Integrating hardware, software, control algorithms, trajectory generation, and visual localization
+7. **Optical Positioning Systems**: Understanding Lighthouse positioning system, optical triangulation, and angle-based position estimation
+8. **Sensor Fusion**: Combining Lighthouse position updates with IMU/barometer for robust state estimation
+9. **System Integration**: Integrating hardware, software, control algorithms, trajectory generation, and positioning systems
 10. **Control Tuning**: Systematic PID parameter tuning for different flight regimes (hover, aggressive maneuvers)
 
 ## Future Work
@@ -507,12 +615,12 @@ This project provided valuable insights into:
 Potential extensions and improvements:
 
 1. **Advanced Control**: Implement model predictive control (MPC) for improved performance
-2. **Enhanced Visual Localization**: Further optimize LightGlue integration for real-time performance on embedded platforms
-3. **SLAM Integration**: Integrate simultaneous localization and mapping with LightGlue-based loop closure
-4. **Multi-Modal Fusion**: Combine LightGlue visual localization with IMU/barometer for improved accuracy
-5. **Swarm Coordination**: Develop multi-robot coordination algorithms with shared visual maps
-6. **Machine Learning**: Apply reinforcement learning for adaptive control and trajectory optimization
-7. **Onboard Processing**: Optimize LightGlue for real-time execution directly on Crazyflie's limited computational resources
+2. **Extended Lighthouse Coverage**: Optimize system geometry for larger tracking volumes
+3. **Multi-Robot Coordination**: Develop swarm algorithms using shared Lighthouse geometry
+4. **Hybrid Positioning**: Combine Lighthouse with other sensors (optical flow, visual odometry) for robustness
+5. **Machine Learning**: Apply reinforcement learning for adaptive control and trajectory optimization
+6. **Outdoor Positioning**: Research alternative positioning methods for outdoor flight
+7. **Precision Landing**: Utilize Lighthouse millimeter-level precision for automated precision landing
 
 ## Technologies Used
 
@@ -532,27 +640,28 @@ Potential extensions and improvements:
   - Bézier curve interpolation for smooth trajectories
   - Lookahead-based waypoint tracking
   - Real-time coordinate transformations
-  - LightGlue graph neural network for feature matching
-  - RANSAC for robust homography estimation
-  - PnP (Perspective-n-Point) for pose estimation
-- **Visual Localization**:
-  - LightGlue: Deep learning-based feature matching
-  - SuperPoint/ALIKED: Feature extraction
-  - Homography estimation and geometric verification
-- **Sensors**: IMU (MPU-9250), barometer (BMP280), time-of-flight sensors (VL53L1x), camera (for visual localization)
-- **Mathematical Tools**: Linear algebra, quaternion rotations, coordinate transformations, graph neural networks, attention mechanisms
+  - Optical triangulation for position estimation
+  - Least squares optimization for geometry calibration
+  - Sensor fusion algorithms
+- **Positioning System**:
+  - Lighthouse Positioning System (SteamVR Base Stations V1/V2)
+  - Lighthouse Positioning Deck
+  - Optical angle measurement and triangulation
+  - System geometry calibration
+- **Sensors**: IMU (MPU-9250), barometer (BMP280), time-of-flight sensors (VL53L1x), Lighthouse photodiodes
+- **Mathematical Tools**: Linear algebra, quaternion rotations, coordinate transformations, least squares optimization, triangulation
 
 ## References
 
-1. Lindenberger, P., Sarlin, P. E., & Pollefeys, M. (2023). LightGlue: Local Feature Matching at Light Speed. *International Conference on Computer Vision (ICCV)*.
+1. Bitcraze AB. (2022). Lighthouse Positioning System Documentation. Retrieved from [https://www.bitcraze.io/documentation/system/positioning/ligthouse-positioning-system/](https://www.bitcraze.io/documentation/system/positioning/ligthouse-positioning-system/)
 
-2. DeTone, D., Malisiewicz, T., & Rabinovich, A. (2018). SuperPoint: Self-Supervised Interest Point Detection and Description. *Conference on Computer Vision and Pattern Recognition (CVPR)*.
+2. Bitcraze AB. (2022). Crazyflie 2.1 Documentation. Retrieved from https://www.bitcraze.io/documentation/
 
-3. Zhao, X., et al. (2023). ALIKED: A Lighter Keypoint and Descriptor Extraction Network via Deformable Transformation. *International Conference on Computer Vision (ICCV)*.
+3. Mellinger, D., & Kumar, V. (2011). Minimum snap trajectory generation and control for quadrotors. *IEEE International Conference on Robotics and Automation (ICRA)*.
 
-4. Sarlin, P. E., et al. (2020). SuperGlue: Learning Feature Matching with Graph Neural Networks. *Conference on Computer Vision and Pattern Recognition (CVPR)*.
+4. Brescianini, D., D'Andrea, R., & D'Andrea, R. (2013). Quadrotor control: modeling, nonlinear control design, and simulation. *IEEE International Conference on Control Applications*.
 
-5. Bitcraze AB. (2022). Crazyflie 2.1 Documentation. Retrieved from https://www.bitcraze.io/documentation/
+5. Bitcraze AB. (2022). Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research. Retrieved from https://www.bitcraze.io/documentation/
 
 ## Conclusion
 
