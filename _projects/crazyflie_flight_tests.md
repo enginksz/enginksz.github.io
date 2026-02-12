@@ -47,6 +47,32 @@ The Crazyflie 2.1 is a palm-sized quadcopter featuring:
 4. **Python API**: High-level Python API for rapid development
 5. **Real-Time Control**: Low-level control loop running at 1kHz
 
+### Crazyflie Platform Visualizations
+
+The following images show the Crazyflie 2.1 platform setup used in this project:
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie01.png" title="Crazyflie 2.1 Platform" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie02.png" title="Lighthouse Positioning Deck" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+*Left: Crazyflie 2.1 nano quadcopter with expansion decks. Right: Lighthouse Positioning Deck installed on the Crazyflie for high-precision indoor positioning.*
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie03.png" title="Flight Test Setup" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie04.png" title="Autonomous Flight" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+*Left: Flight test setup with Lighthouse base stations visible in the background. Right: Crazyflie executing autonomous flight maneuvers with precise trajectory following.*
+
 ## Project Objectives
 
 The main objectives of this project were:
@@ -583,7 +609,7 @@ where $\tau$ is a threshold for outlier rejection, and $\alpha$ is the fusion we
 
 This integration enables the precise trajectory following demonstrated in the star pattern maneuver, with the high update rate and low latency of the Lighthouse system providing the necessary precision for complex autonomous flight.
 
-## Flight Test Video
+## Flight Test Video and Visualizations
 
 The following video demonstrates the **rotating star pattern maneuver**, one of the most challenging flight tests conducted during this project:
 
@@ -594,6 +620,32 @@ The following video demonstrates the **rotating star pattern maneuver**, one of 
 </div>
 
 *This video shows the Crazyflie executing a complex 5-pointed star pattern trajectory while simultaneously rotating around its center. This maneuver demonstrates advanced autonomous flight capabilities, precise trajectory following, and robust control system performance. The drone maintains the star shape throughout the rotation, requiring precise coordination of position and yaw control loops, real-time trajectory generation, and sophisticated feedforward control algorithms.*
+
+### Flight Test Images
+
+The following images capture various aspects of the flight tests and system setup:
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie01.png" title="Crazyflie 2.1 in Flight" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie02.png" title="Lighthouse Positioning System" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+*Left: Crazyflie 2.1 executing autonomous flight maneuvers. The compact design and modular expansion decks are visible. Right: Lighthouse Positioning Deck installed on the Crazyflie, enabling high-precision indoor positioning with decimeter-level accuracy.*
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie03.png" title="Test Environment Setup" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/crayzflie/crayzflie04.png" title="Star Pattern Maneuver" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+*Left: Flight test environment with Lighthouse base stations positioned for optimal coverage. The system geometry is calibrated to provide accurate positioning throughout the tracking volume. Right: Crazyflie executing the complex rotating star pattern maneuver, demonstrating precise trajectory following and control system coordination.*
 
 ## Key Learnings
 
