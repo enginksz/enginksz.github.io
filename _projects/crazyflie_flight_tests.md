@@ -2,7 +2,7 @@
 layout: page
 title: Crazyflie Flight Tests and Experiments
 description: Autonomous flight tests and experiments with Crazyflie 2.1 nano quadcopter, including control system development and real-world flight demonstrations
-img: assets/img/video/IMG_0425.MOV
+img: assets/img/crayzflie/lighthouse.png
 importance: 2
 category: work
 giscus_comments: true
