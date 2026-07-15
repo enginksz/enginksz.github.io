@@ -20,6 +20,8 @@ tags:
 ---
 ## Overview
 
+**Paper accepted at [SIU 2026](https://siu2026.pirireis.edu.tr/)** (34th Signal Processing and Communications Applications Conference, 7–10 July 2026, Piri Reis University).
+
 Visual Localization project is a real-time visual localization system designed for Unmanned Aerial Vehicles (UAVs) operating in GNSS-denied environments. The system leverages deep learning-based feature matching between onboard camera images and geo-referenced satellite imagery to provide accurate position estimates without relying on GPS signals.
 
 The core innovation lies in dynamically generating perspective-transformed map regions from satellite tiles based on the UAV's estimated attitude and position, enabling robust visual feature matching even under challenging conditions such as illumination changes, viewpoint variations, and texture-poor environments.
