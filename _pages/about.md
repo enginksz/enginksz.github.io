@@ -2,46 +2,40 @@
 layout: about
 title: about
 permalink: /
-subtitle: Robotics Software Engineer specializing in autonomous systems, perception, and computer vision. Passionate about developing cutting-edge solutions for UGV/UAV applications through sensor fusion, SLAM, and deep learning technologies.
+subtitle: Senior Robotics & Autonomy Engineer. Perception and localization for unstructured and GNSS-degraded field robots — UGV and UAV.
 
 profile:
   align: right
   image: engin_oksuz.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
 
-news: true # includes a list of news items
-latest_posts: true # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: true
+latest_posts: true
+selected_papers: true
+social: true
 ---
 
-I am a **Robotics Software Engineer** at **HAVELSAN - Robotics and Autonomous Systems**, where I develop autonomous systems for Unmanned Ground Vehicles (UGV) and Unmanned Aerial Vehicles (UAV). My work focuses on perception systems, sensor fusion, SLAM and deep learning applications for autonomous navigation.
+I work on **perception** and **localization** for machines that operate off the map: unstructured terrain and GNSS-degraded air. C++, ROS 2, and Jetson. I do not build the vehicle.
 
-## Research Interests
+I am a robotics software engineer at **HAVELSAN — Robotics and Autonomous Systems**. Employer UGV and UAV programs are confidential. I own perception and localization pieces — I do not lead the platform.
 
-My research interests include autonomous navigation, deep reinforcement learning, sensor fusion, computer vision, and developing robust systems for GNSS-denied environments. I am passionate about bridging the gap between research and practical applications in robotics and autonomous systems.
+Public work is listed under [Projects](/projects/). The SIU 2026 paper is the one to read. A new open-dataset project on uncertainty-aware off-road semantics is in progress; it is not the employer stack.
 
-## Professional Experience
+## Focus
 
-Currently, I lead the development of **UGV BARKAN**, an offroad autonomous ground vehicle system.
+- Visual and LiDAR–inertial localization, including GNSS-denied stretches
+- Multi-modal sensor fusion (camera, LiDAR, IMU, GNSS when available)
+- Onboard vision: segmentation and tracking, TensorRT on Jetson
+- Map-aided UAV localization against satellite imagery ([SIU 2026](/projects/gnss_denied_localization/))
 
-- **Perception & Computer Vision**: Architecting PyTorch-based segmentation systems with SuperGradients, implementing multi-modal sensor fusion (LiDAR-camera), and deploying state-of-the-art deep learning models (DINOv2, SAM, RF-DETR) for real-time object detection and scene understanding in challenging offroad environments
-- **Sensor Fusion & Localization**: Leading LIO SLAM and superodom vs. implementation with IMU-LiDAR fusion, designing 3D point cloud processing pipelines using PCL and Open3D. Developed a novel camera-LiDAR-IMU fusion framework with traversability prediction specifically optimized for offroad terrain analysis
-- **System Architecture & Optimization**: Designing scalable ROS/ROS2 architectures for autonomous vehicles, optimizing deep learning inference pipelines for NVIDIA Jetson platforms, and implementing efficient sensor processing workflows
+## Not here
 
-I also work on **Toyota Corolla Autonomous Vehicle** projects, focusing on multi-sensor architecture design and Autoware framework customization for advanced sensing, perception, and path-planning algorithms.
+Employer platform names, traversability / risk / world-model internals, and papers still under review.
 
-Additionally, I develop **UAV systems** for GNSS-denied navigation using deep learning-based visual localization algorithms that extract and match features from satellite imagery, achieving robust positioning in GPS-challenging environments.
+## Skills
 
-I actively follow the latest developments in **autonomous systems research**, regularly reviewing papers on perception algorithms, sensor fusion techniques, and system architectures from conferences like CVPR, ICRA, and IROS. This allows me to integrate cutting-edge approaches into production systems and stay at the forefront of technological advancements in robotics and autonomous navigation.
-
-## Technical Skills
-
-**Programming**: C++, Python, Bash  
-**Frameworks**: PyTorch, OpenCV, PCL, Open3D, SuperGradients, DINOv2, SAM, RF-DETR, YOLO, Autoware.AI/Universe, MAVROS  
-**Tools**: Docker, ROS1/ROS2, ONNX Runtime, TensorRT, NVIDIA Jetson, Ubuntu Linux, Git, GitHub, GitLab  
-**Specializations**: Semantic Segmentation, Object Detection, Sensor Fusion, SLAM, Collision Avoidance, Terrain Analysis  
-**Sensors**: LiDAR (Velodyne, Robosense), Cameras (Lucid, ZEDs), IMU/GPS (Applanix, SBG), RADAR (SmartMicro)
-**Hardware_Platforms**: NVIDIA Jetson AGX/NX, Neousys Nuvo
-**Soft_Skills**: Research, Technical Communication, Leadership, Team Collaboration
-
+**Languages:** C++, Python, Bash  
+**Robotics:** ROS 1/2, Docker, Ubuntu, Git  
+**Perception / ML:** PyTorch, OpenCV, PCL, Open3D, DINOv2, SAM2, YOLO, ONNX Runtime, TensorRT, CUDA  
+**Estimation:** LiDAR–inertial SLAM, EKF / pose-graph fusion, visual geo-localization  
+**Hardware:** Jetson AGX/NX, Velodyne / Robosense, industrial cameras, Applanix / SBG, SmartMicro radar

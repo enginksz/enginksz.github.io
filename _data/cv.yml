@@ -35,64 +35,20 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Senior Robotics Software Engineer
+      institution: HAVELSAN - Robotics and Autonomous Systems, Ankara, Turkey
+      year: Jul 2023 - Present
+      description:
+        - Perception and localization on employer UGV/UAV programs (platform details confidential). Not the platform lead.
+        - GNSS-denied UGV localization (LiDAR–inertial + EKF); pose to the vehicle stack with and without GPS.
+        - Perception ML loop: domain data, train/eval, C++ TensorRT on Jetson AGX. Follow-me with SAM2 mask tracking at 25 FPS.
+        - UAV map-aided visual localization; SIU 2026. Handed geometric/semantic layers to planning.
     - title: Robotics Software Engineer
       institution: HAVELSAN - Robotics and Autonomous Systems, Ankara, Turkey
-      year: Apr 2021 - Present
+      year: Apr 2021 - Jun 2023
       description:
-        - title: UGV BARKAN (Unmanned Ground Vehicle) Development
-          contents:
-            - title: Perception & Computer Vision
-              contents:
-                - Architected PyTorch segmentation system with SuperGradients, CLAHE preprocessing and morphological operations
-                - Designed LiDAR-camera fusion with OpenCV stereo vision and PCL point cloud processing
-                - Implemented DINOv2 transformers and Meta SAM for feature extraction and zero-shot segmentation
-                - Deployed RF-DETR models with ONNX Runtime GPU optimization achieving high-FPS detection
-            - title: Sensor Fusion & Localization
-              contents:
-                - Led real-time SLAM implementation for UGV with FAST-LIO and IMU-LiDAR fusion
-                - Architected fusion systems for Livox LiDAR, cameras, and IMU with advanced preprocessing
-                - Designed 3D pipelines using PCL and Open3D for voxel filtering and outlier removal
-            - title: Navigation & Path Planning
-              contents:
-                - Implemented costmap algorithms for autonomous navigation with real-time obstacle avoidance
-                - Developed systems integrating LiDAR-camera fusion with YOLOv11 for obstacle detection and dynamic replanning
-            - title: System Architecture & Monitoring
-              contents:
-                - Architected real-time CPU monitoring with C++ implementation
-                - Designed comprehensive health monitoring for sensors and ROS nodes
-            - title: Hardware Optimization
-              contents:
-                - Optimized software for NVIDIA AGX/NX platforms with production-grade performance tuning
-                - Optimized performance for Neousys Nuvo platforms using Python/C++ with production-grade tuning
-                - Architected CUDA execution providers for ONNX models
-                - Designed autonomous vehicle software with extensive simulation testing using ROS/ROS2 architecture
-        - title: Toyota Corolla Autonomous Vehicle
-          contents:
-            - title: Sensor Integration & Data Processing
-              contents:
-                - Architected sensor fusion systems processing Lucid Cameras, Velodyne LIDARs, SmartMicro RADARs and Applanix/SBG INS data in Python/C++
-                - Implemented preprocessing algorithms and fusion techniques for enhanced reliability in autonomous navigation
-            - title: Path Planning
-              contents:
-                - Led adaptation of Autoware path planning algorithms, implementing search-based and global planners, local planners in C++ for real-time motion planning
-        - title: UAV (Unmanned Aerial Vehicle) Systems
-          contents:
-            - title: GNSS-Denied Navigation & Localization
-              contents:
-                - Architected and implemented localization algorithms using deep learning features extracted from satellite imagery with Python, achieving robust positioning in challenging environments
-                - Developed integration of position estimation data with INS for enhanced autopilot feedback and navigation accuracy
-            - title: Computer Vision & Object Detection
-              contents:
-                - Designed and implemented Python-based algorithms for detecting and localizing objects from UAV camera feeds with high accuracy
-                - Developed detection pipelines integrating camera data with positioning for precise object localization
-            - title: Data Collection & Automation
-              contents:
-                - Architected data collection processes using MAVROS and MAVSDK libraries for efficient mission execution
-                - Implemented robust systems for seamless data acquisition during autonomous flights
-            - title: Indoor Positioning & Testing
-              contents:
-                - Conducted comprehensive geometric flight tests with Loco Positioning System and Lighthouse indoor positioning systems using Crazyflie drone platform
-                - Performed extensive testing and validation of positioning algorithms in controlled indoor environments
+        - C++ / ROS 2 bring-up for perception and LiDAR–inertial localization on defense UGV programs.
+        - Multi-sensor integration (LiDAR, camera, IMU, GNSS) and field debug on physical platforms.
     - title: Coordinator
       institution: TEKNOFEST Competitions, Istanbul, Turkey
       year: Jan 2019 - Apr 2021

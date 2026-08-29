@@ -3,8 +3,8 @@ layout: page
 title: LIO-SAM Gazebo ROS2
 description: This repository contains the implementation of LIO-SAM (Lidar Inertial Odometry via Smoothing and Mapping) integrated with ROS 2 (Robot Operating System 2) for robust and accurate SLAM (Simultaneous Localization and Mapping) applications.
 img: assets/img/liosam.jpg
-importance: 2
-category: work
+importance: 10
+category: fun
 giscus_comments: true
 ---
 

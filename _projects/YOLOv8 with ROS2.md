@@ -3,8 +3,8 @@ layout: page
 title: YOLOv8 with ROS2
 description: This repository contains the implementation of **YOLOv8** integrated with **ROS 2 (Robot Operating System 2)** for real-time object detection.
 img: assets/img/yolov8.jpg
-importance: 2
-category: work
+importance: 13
+category: fun
 giscus_comments: true
 ---
 

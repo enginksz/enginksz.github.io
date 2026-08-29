@@ -3,7 +3,7 @@ layout: page
 title: Follow-Me Robot Using YOLOv11, SAM2, and Visual Servo Control
 description: A sophisticated visual servoing system combining YOLOv11 object detection, SAM2 segmentation, and image-based visual servo control for autonomous robot following behavior.
 img: assets/img/sam2.png
-importance: 1
+importance: 2
 category: work
 giscus_comments: true
 ---

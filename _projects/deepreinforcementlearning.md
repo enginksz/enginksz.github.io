@@ -3,8 +3,8 @@ layout: page
 title: Deep Reinforcement Learning for Mobile Robot Navigation
 description: This project implements **Deep Reinforcement Learning (DRL)** for mobile robot navigation using the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm.
 img: assets/img/drl_nav.png
-importance: 2
-category: work
+importance: 11
+category: fun
 giscus_comments: true
 ---
 

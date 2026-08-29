@@ -8,12 +8,12 @@ middle_name:
 last_name: Oksuz
 email: enginksz@hotmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Robotics Software Engineer specializing in autonomous systems, perception, and computer vision. Experienced in sensor fusion, SLAM, path planning, and deep learning for UGV/UAV applications.
+  Senior Robotics & Autonomy Engineer. Perception, sensor fusion, and localization for unstructured ground and GNSS-degraded air.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: autonomous driving, perception, path planning,computer vision # add your own keywords or leave empty
+keywords: robotics, autonomy, perception, localization, sensor fusion, GNSS-denied, field robotics
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
