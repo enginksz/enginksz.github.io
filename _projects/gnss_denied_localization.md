@@ -7,8 +7,6 @@ importance: 1
 category: work
 giscus_comments: true
 links:
-  - title: GitHub Repository
-    url: https://github.com/enginksz/NAVWOGPS
   - title: Paper
     url: /assets/pdf/gnss_denied_localization.pdf
 tags:
