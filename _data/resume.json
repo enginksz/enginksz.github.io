@@ -1,0 +1,117 @@
+{
+  "basics": {
+    "name": "Engin Öksüz",
+    "label": "Senior Robotics & Autonomy Engineer",
+    "email": "enginksz@hotmail.com",
+    "url": "https://enginksz.github.io",
+    "summary": "Perception and localization for unstructured ground and GNSS-degraded air. C++ / ROS 2 / Jetson. Employer platforms confidential.",
+    "location": {
+      "city": "Istanbul",
+      "countryCode": "TR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "enginoksuzprofili",
+        "url": "https://www.linkedin.com/in/enginoksuzprofili/"
+      },
+      {
+        "network": "GitHub",
+        "username": "enginksz",
+        "url": "https://github.com/enginksz"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "HAVELSAN — Robotics and Autonomous Systems",
+      "position": "Senior Robotics Software Engineer",
+      "url": "https://www.havelsan.com.tr/",
+      "startDate": "2023-07",
+      "highlights": [
+        "Perception and localization owner on employer UGV/UAV programs (details confidential). Not the platform lead.",
+        "GNSS-denied UGV localization: LiDAR–inertial + EKF; pose to the vehicle stack with and without GPS.",
+        "Perception ML loop (segmentation / tracking): domain data → train/eval → C++ TensorRT on Jetson AGX. SAM2 follow-me at 25 FPS.",
+        "UAV map-aided visual localization; SIU 2026. Geometric/semantic layers handed to planning."
+      ]
+    },
+    {
+      "name": "HAVELSAN — Robotics and Autonomous Systems",
+      "position": "Robotics Software Engineer",
+      "url": "https://www.havelsan.com.tr/",
+      "startDate": "2021-04",
+      "endDate": "2023-06",
+      "highlights": [
+        "C++ / ROS 2 bring-up for perception and LiDAR–inertial localization on defense UGV programs.",
+        "Multi-sensor integration (LiDAR, camera, IMU, GNSS) and field debug on physical platforms."
+      ]
+    },
+    {
+      "name": "TEKNOFEST",
+      "position": "Competitions Coordinator",
+      "url": "https://www.teknofest.org/",
+      "startDate": "2019-01",
+      "endDate": "2021-04",
+      "highlights": [
+        "Coordinated technology competitions across 35 fields; training, Q&A, and web/social content."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Istanbul Technical University",
+      "location": "Istanbul, Türkiye",
+      "url": "https://www.itu.edu.tr/",
+      "area": "Electronics Engineering",
+      "studyType": "M.Sc.",
+      "startDate": "2019",
+      "endDate": "2022",
+      "highlights": [
+        "Thesis: Embedded AI Based Image Matching Method and Application in UAV"
+      ]
+    },
+    {
+      "institution": "Nuh Naci Yazgan University",
+      "location": "Kayseri, Türkiye",
+      "area": "Electrical and Electronics Engineering",
+      "studyType": "B.Sc.",
+      "startDate": "2012",
+      "endDate": "2017",
+      "score": "3.24/4.00, second in class"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Deep Visual Localization for UAVs in GNSS-Denied Environments Using Satellite Imagery",
+      "publisher": "34th Signal Processing and Communications Applications Conference (SIU 2026)",
+      "releaseDate": "2026",
+      "url": "https://enginksz.github.io/projects/gnss_denied_localization/"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Autonomy",
+      "keywords": [
+        "Perception",
+        "Localization",
+        "Sensor fusion",
+        "GNSS-denied",
+        "ROS 2",
+        "C++",
+        "Python",
+        "Jetson",
+        "TensorRT"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Turkish",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ]
+}

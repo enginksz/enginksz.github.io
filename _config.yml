@@ -649,9 +649,8 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
+# Do not fetch resume.json over the live site URL — that rebuilds /cv/ from
+# yesterday's deployed file. Jekyll loads _data/resume.json instead.
 jsonresume:
   - basics
   - work
