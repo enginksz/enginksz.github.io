@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper accepted at [SIU 2026](https://siu2026.pirireis.edu.tr/): [Deep Visual Localization for UAVs in GNSS-Denied Environments Using Satellite Imagery](https://enginksz.github.io/projects/gnss_denied_localization/)
+Paper accepted at [SIU 2026](https://siu2026.pirireis.edu.tr/): Deep Visual Localization for UAVs in GNSS-Denied Environments Using Satellite Imagery

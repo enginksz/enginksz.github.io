@@ -5,6 +5,7 @@ description: Autonomous flight tests and experiments with Crazyflie 2.1 nano qua
 img: assets/img/crayzflie/lighthouse.png
 importance: 3
 category: work
+published: false
 giscus_comments: true
 tags:
   - Robotics

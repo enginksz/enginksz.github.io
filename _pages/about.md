@@ -26,7 +26,7 @@ Public work is listed under [Projects](/projects/). The SIU 2026 paper is the on
 - Visual and LiDAR–inertial localization, including GNSS-denied stretches
 - Multi-modal sensor fusion (camera, LiDAR, IMU, GNSS when available)
 - Onboard vision: segmentation and tracking, TensorRT on Jetson
-- Map-aided UAV localization against satellite imagery ([SIU 2026](/projects/gnss_denied_localization/))
+- Map-aided UAV localization against satellite imagery ([SIU 2026](https://siu2026.pirireis.edu.tr/))
 
 ## Not here
 

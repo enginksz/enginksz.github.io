@@ -5,6 +5,7 @@ description: A sophisticated visual servoing system combining YOLOv11 object det
 img: assets/img/sam2.png
 importance: 2
 category: work
+published: false
 giscus_comments: true
 ---
 

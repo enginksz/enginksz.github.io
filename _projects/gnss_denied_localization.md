@@ -5,6 +5,7 @@ description: SIU 2026. SuperPoint–LightGlue matching of UAV camera frames to s
 img: assets/img/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
 importance: 1
 category: work
+published: false
 giscus_comments: true
 links:
   - title: IEEE Xplore
