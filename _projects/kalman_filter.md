@@ -5,7 +5,6 @@ description: Kalman filtering for state estimation and prediction of the ego veh
 img: assets/img/kalmanfilter.png
 importance: 14
 category: fun
-giscus_comments: true
 ---
 
 # Use of Kalman Filter in Autonomous Vehicles

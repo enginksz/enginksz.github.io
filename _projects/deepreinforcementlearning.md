@@ -5,7 +5,6 @@ description: This project implements **Deep Reinforcement Learning (DRL)** for m
 img: assets/img/drl_nav.png
 importance: 11
 category: fun
-giscus_comments: true
 ---
 
 # Deep Reinforcement Learning for Mobile Robot Navigation

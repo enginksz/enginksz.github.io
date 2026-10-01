@@ -5,7 +5,6 @@ description: This repository contains the implementation of LIO-SAM (Lidar Inert
 img: assets/img/liosam.jpg
 importance: 10
 category: fun
-giscus_comments: true
 ---
 
 This repository contains the implementation of LIO-SAM (Lidar Inertial Odometry via Smoothing and Mapping) integrated with ROS 2 (Robot Operating System 2) for robust and accurate SLAM (Simultaneous Localization and Mapping) applications. LIO-SAM leverages both Lidar and IMU (Inertial Measurement Unit) data to achieve high accuracy in mapping and localization in real-time.

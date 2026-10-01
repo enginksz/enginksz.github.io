@@ -5,7 +5,6 @@ description: This repository contains the implementation of **YOLOv8** integrate
 img: assets/img/yolov8.jpg
 importance: 13
 category: fun
-giscus_comments: true
 ---
 
 This repository contains the implementation of **YOLOv8** integrated with **ROS 2 (Robot Operating System 2)** for real-time object detection. YOLOv8 is the version of the "You Only Look Once" (YOLO) family of models, designed for efficient and accurate object detection.

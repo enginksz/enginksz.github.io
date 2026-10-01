@@ -5,7 +5,6 @@ description: Absolute UAV pose from camera-to-orthophoto registration on OrthoLo
 img: assets/img/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
 importance: 2
 category: work
-giscus_comments: true
 links:
   - title: OrthoLoC
     url: https://deepscenario.github.io/OrthoLoC/

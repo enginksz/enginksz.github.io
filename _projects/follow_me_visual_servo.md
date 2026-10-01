@@ -5,7 +5,6 @@ description: A sophisticated visual servoing system combining YOLOv11 object det
 img: assets/img/sam2.png
 importance: 4
 category: work
-giscus_comments: true
 ---
 
 # Follow-Me Robot Using YOLOv11, SAM2, and Visual Servo Control

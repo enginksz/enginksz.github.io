@@ -5,7 +5,6 @@ description: LiDAR–inertial odometry with gated GNSS fusion on MulRan and Urba
 img: assets/img/liosam.jpg
 importance: 3
 category: work
-giscus_comments: true
 links:
   - title: MulRan
     url: https://sites.google.com/view/mulran-pr/dataset

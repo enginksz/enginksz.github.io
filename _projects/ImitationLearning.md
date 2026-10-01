@@ -5,7 +5,6 @@ description: This project explores the implementation of obstacle avoidance in a
 img: assets/img/gail.png
 importance: 12
 category: fun
-giscus_comments: true
 ---
 
 ## Introduction

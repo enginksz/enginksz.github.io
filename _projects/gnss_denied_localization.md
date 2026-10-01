@@ -5,7 +5,6 @@ description: SIU 2026. SuperPoint–LightGlue matching of UAV camera frames to s
 img: assets/img/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
 importance: 1
 category: work
-giscus_comments: true
 links:
   - title: IEEE Xplore
     url: https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=%22Deep+Visual+Localization+for+UAVs+in+GNSS-Denied+Environments+Using+Satellite+Imagery%22
