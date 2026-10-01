@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Use of Kalman Filter in Autonomous Vehicles
-description: This project explores the implementation of obstacle avoidance in autonomous systems using imitation learning. The aim is to train agents to navigate environments while effectively avoiding obstacles.
+description: Kalman filtering for state estimation and prediction of the ego vehicle and surrounding objects from noisy LiDAR, radar, camera and GPS measurements.
 img: assets/img/kalmanfilter.png
 importance: 14
 category: fun

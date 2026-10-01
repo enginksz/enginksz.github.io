@@ -81,8 +81,8 @@ You can visualize the results in Rviz or any other compatible visualization tool
 
 ```bash
 ros2 run rviz2 rviz2
+```
 
 ## Contributing
 
 Feel free to submit issues, create pull requests, or fork this repository to improve and extend the project.
-```
