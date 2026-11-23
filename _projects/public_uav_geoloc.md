@@ -3,7 +3,7 @@ layout: page
 title: UAV Visual Geo-Localization on Public Benchmarks (OrthoLoC + AerialVL)
 description: Absolute UAV pose from camera-to-orthophoto registration on OrthoLoC and AerialVL. Prior-guided map warping, SuperPoint–LightGlue, DSM-lifted EPnP + RANSAC, and a gated track filter. The open-data counterpart of the SIU 2026 field system.
 img: assets/img/navwogps/eb94e55c-d80c-4118-bb8f-171e4417d1ef.png
-importance: 2
+importance: 3
 category: work
 links:
   - title: OrthoLoC

@@ -3,7 +3,7 @@ layout: page
 title: Ground Vehicle Localization Under GNSS Dropout (LiDAR–IMU + GNSS)
 description: LiDAR–inertial odometry with gated GNSS fusion on MulRan and UrbanNav. Frame alignment, innovation gating, continuous odometry through outages, and drift / reacquisition metrics on open data.
 img: assets/img/liosam.jpg
-importance: 3
+importance: 4
 category: work
 links:
   - title: MulRan
