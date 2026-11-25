@@ -27,7 +27,6 @@ Public work is listed under [Projects](/projects/). SIU 2026 is the field paper.
 - Humanoid site localization & mapping (sim) — [Unitree G1, Doppler + legs](/projects/humanoid_g1_site_localization/)
 - Public UAV geo-localization — [OrthoLoC + AerialVL](/projects/public_uav_geoloc/)
 - Public ground localization — [MulRan / UrbanNav, GPS on vs denied](/projects/public_ground_loc/)
-- Perception demos (follow-me, etc.) under Projects; not a substitute for the localization pages above
 
 ## Focus
 

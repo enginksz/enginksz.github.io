@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Public work first — SIU field UAV localization, humanoid site localization (sim), open-benchmark air and ground pages, then perception demos. Older wrappers under fun.
+description: Public work first — SIU field UAV localization, humanoid site localization (sim), open-benchmark air and ground pages. Older wrappers under fun.
 nav: true
 nav_order: 3
 display_categories: [work, fun]
